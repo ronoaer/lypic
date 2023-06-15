@@ -1,0 +1,9 @@
+{
+    "title": "Lypic",
+    "identifier": "com.yourcompany.wizardEVP.Lypic",
+    "orientation": "landscape",
+    "versioncode": 1,
+    "versionname": "1.0.0",
+    "stage": "test"
+
+}
