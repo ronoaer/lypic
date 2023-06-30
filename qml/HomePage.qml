@@ -82,10 +82,15 @@ Page {
 
         Component.onCompleted: {
             logic.folderChanged.connect(onFolderChanged)
+            logic.returnToHome.connect(onReturnToHome)
         }
 
         function onFolderChanged(folder) {
             root.title = folder
+        }
+
+        function onReturnToHome() {
+            root.navigationStack.push(homePage)
         }
     }
 }
