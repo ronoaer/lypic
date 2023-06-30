@@ -90,7 +90,7 @@ Page {
         }
 
         function onReturnToHome() {
-            root.navigationStack.push(homePage)
+            root.navigationStack.pop(vievImageComponent)
         }
     }
 }
