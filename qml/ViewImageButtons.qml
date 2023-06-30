@@ -3,6 +3,12 @@ import Felgo 3.0
 import QtGraphicalEffects 1.0
 
 Item {
+    id: root
+    signal rotationLeftImage
+    signal rotationRightImage
+    signal zoomInImage
+    signal zoomOutImage
+
     LinearGradient {
         anchors.fill: parent
 
@@ -59,6 +65,10 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         icon: IconType.home
+
+        onClicked: {
+            logic.returnToHome()
+        }
     }
 
     IconButton {
@@ -66,6 +76,10 @@ Item {
         anchors.right: zoomOutButton.left
         anchors.bottom: parent.bottom
         icon: IconType.angleleft
+
+        onClicked: {
+            root.zoomInImage()
+        }
     }
 
     IconButton {
@@ -73,6 +87,10 @@ Item {
         anchors.right: homeButton.left
         anchors.bottom: parent.bottom
         icon: IconType.angleright
+
+        onClicked: {
+            root.zoomOutImage()
+        }
     }
 
     IconButton {
@@ -80,6 +98,10 @@ Item {
         anchors.left: homeButton.right
         anchors.bottom: parent.bottom
         icon: IconType.rotateleft
+
+        onClicked: {
+            root.rotationLeftImage()
+        }
     }
 
     IconButton {
@@ -87,5 +109,9 @@ Item {
         anchors.left: rotutionLeftButton.right
         anchors.bottom: parent.bottom
         icon: IconType.rotateright
+
+        onClicked: {
+            root.rotationRightImage()
+        }
     }
 }

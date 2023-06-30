@@ -9,15 +9,13 @@ App {
         }
     }
 
-
-
     Component {
         id: vievImageComponent
         ViewImagePage{}
     }
 
     DataModel {
-      id: pictureModel
+        id: pictureModel
     }
 
     SelectPictureFolder {

@@ -21,7 +21,7 @@ Page {
     }
 
 
-    AppImage {
+    RoundedImage {
         id: imageContainer
 
         anchors.horizontalCenter: parent.horizontalCenter
@@ -39,6 +39,29 @@ Page {
         anchors.bottom: parent.bottom
         height: dp(50)
         width: parent.width
+    }
+
+    Component.onCompleted: {
+        buttons.rotationLeftImage.connect(onRotationLeftImage)
+        buttons.rotationRightImage.connect(onRotationRightImage)
+        buttons.zoomInImage.connect(onZoomInImage)
+        buttons.zoomOutImage.connect(onZoomOutImage)
+    }
+
+    function onRotationLeftImage() {
+        imageContainer.rotation -= 5
+    }
+
+    function onRotationRightImage() {
+        imageContainer.rotation += 5
+    }
+
+    function onZoomInImage() {
+        imageContainer.scale -= 0.1
+    }
+
+    function onZoomOutImage() {
+        imageContainer.scale += 0.1
     }
 }
 
