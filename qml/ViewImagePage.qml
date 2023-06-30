@@ -28,7 +28,7 @@ Page {
         height: parent.height - buttons.height
         width: parent.width
 
-        fillMode: Image.PreserveAspectCrop
+        fillMode: Image.PreserveAspectFit
 
         source: pictureModel.getCover(modelEntry)
     }
