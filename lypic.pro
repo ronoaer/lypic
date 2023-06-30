@@ -64,4 +64,5 @@ DISTFILES += \
     qml/DataModel.qml \
     qml/Logic.qml \
     qml/SelectPictureFolder.qml \
-    qml/ViewImagePage.qml
+    qml/ViewImagePage.qml \
+    qml/ViewImageButtons.qml

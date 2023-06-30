@@ -25,49 +25,20 @@ Page {
         id: imageContainer
 
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.fill: parent
+        height: parent.height - buttons.height
+        width: parent.width
+
         fillMode: Image.PreserveAspectCrop
 
         source: pictureModel.getCover(modelEntry)
     }
 
-    IconButton {
-        id: previosButton
+    ViewImageButtons {
+        id: buttons
+        anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        icon: IconType.arrowcircleleft
-
-        visible: pictureModel.count > 1
-
-        onClicked: {
-            // previes picture, should be moved to class model
-            var curIndex = pictureModel.indexOf("name", modelEntry.name)
-
-            if (curIndex > 0) {
-                curIndex = curIndex - 1
-            }
-
-            modelEntry = pictureModel.get(curIndex)
-        }
-    }
-
-    IconButton {
-        id: nextButton
-        anchors.bottom: parent.bottom
-        anchors.right: parent.right
-        icon: IconType.arrowcircleright
-
-        visible: pictureModel.count > 1
-
-        onClicked: {
-            // next picture, should be moved to class model
-            var curIndex = pictureModel.indexOf("name", modelEntry.name)
-
-            if (curIndex < pictureModel.count - 1) {
-                curIndex = curIndex + 1
-            }
-
-            modelEntry = pictureModel.get(curIndex)
-        }
+        height: dp(50)
+        width: parent.width
     }
 }
+

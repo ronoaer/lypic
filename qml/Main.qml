@@ -3,25 +3,13 @@ import QtQuick 2.0
 
 
 App {
-    //view
-    Navigation {
-        id: navigation
-        navigationMode: navigationModeTabs
-
-        NavigationItem {
-            id: homePageItem
-            title: qsTr("Home")
-            icon: IconType.home
-
-            NavigationStack {
-                initialPage: homePage
-            }
+    NavigationStack {
+        HomePage {
+            id: homePage
         }
     }
 
-    HomePage {
-        id: homePage
-    }
+
 
     Component {
         id: vievImageComponent
